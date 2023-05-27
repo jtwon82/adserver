@@ -1,0 +1,249 @@
+<ehcache>
+
+    <!-- Sets the path to the directory where cache .data files are created.
+
+         If the path is a Java System Property it is replaced by
+         its value in the running VM.
+
+         The following properties are translated:
+         user.home - User's home directory
+         user.dir - User's current working directory
+         java.io.tmpdir - Default temp file path -->
+    <diskStore path="/home/dreamsearch/datas"/>
+    <defaultCache
+        maxElementsInMemory="10000"
+        eternal="false"
+        timeToIdleSeconds="120"
+        timeToLiveSeconds="120"
+        overflowToDisk="true"
+     />
+    <cache name="MediaCodeCache"
+           maxElementsInMemory="10000"
+           overflowToDisk="true"
+           eternal="false"
+		   memoryStoreEvictionPolicy="LRU"
+		   timeToIdleSeconds="0"
+		   timeToLiveSeconds="0"
+	/>
+	<cache name="AdSiteCache"
+           maxElementsInMemory="10000"
+           overflowToDisk="true"
+           eternal="false"
+		   memoryStoreEvictionPolicy="LRU"
+		   timeToIdleSeconds="0"
+		   timeToLiveSeconds="0"
+	/>
+	<cache name="IadSiteCache"
+           maxElementsInMemory="10000"
+           overflowToDisk="true"
+           eternal="false"
+		   memoryStoreEvictionPolicy="LRU"
+		   timeToIdleSeconds="0"
+		   timeToLiveSeconds="0"
+	/>
+	<cache name="MediaSiteCache"
+           maxElementsInMemory="10000"
+           overflowToDisk="true"
+           eternal="false"
+		   memoryStoreEvictionPolicy="LRU"
+		   timeToIdleSeconds="0"
+		   timeToLiveSeconds="0"
+	/>
+	<cache name="ShopAdConfigCache"
+           maxElementsInMemory="1000"
+           overflowToDisk="true"
+           eternal="false"
+		   memoryStoreEvictionPolicy="LRU"
+		   timeToIdleSeconds="0"
+		   timeToLiveSeconds="0"
+	/>
+	<cache name="UrlMatchConfigCache"
+           maxElementsInMemory="10000"
+           overflowToDisk="true"
+           eternal="false"
+		   memoryStoreEvictionPolicy="LRU"
+		   timeToIdleSeconds="0"
+		   timeToLiveSeconds="0"
+	/>
+	<cache name="IkeywordMatchConfigCache"
+           maxElementsInMemory="10000"
+           overflowToDisk="true"
+           eternal="false"
+		   memoryStoreEvictionPolicy="LRU"
+		   timeToIdleSeconds="0"
+		   timeToLiveSeconds="0"
+	/>
+	<cache name="BaseAdConfigCache"
+           maxElementsInMemory="10000"
+           overflowToDisk="true"
+           eternal="false"
+		   memoryStoreEvictionPolicy="LRU"
+		   timeToIdleSeconds="0"
+		   timeToLiveSeconds="0"
+	/>
+	<cache name="AdCashCache"
+           maxElementsInMemory="10000"
+           overflowToDisk="true"
+           eternal="false"
+		   memoryStoreEvictionPolicy="LRU"
+		   timeToIdleSeconds="0"
+		   timeToLiveSeconds="0"
+	/>
+	<cache name="MediaScriptCache"
+           maxElementsInMemory="10000"
+           overflowToDisk="true"
+           eternal="false"
+		   memoryStoreEvictionPolicy="LRU"
+		   timeToIdleSeconds="0"
+		   timeToLiveSeconds="0"
+	/>
+	<cache name="NormalBaseAdConfigCache"
+           maxElementsInMemory="10000"
+           overflowToDisk="true"
+           eternal="false"
+		   memoryStoreEvictionPolicy="LRU"
+		   timeToIdleSeconds="0"
+		   timeToLiveSeconds="0"
+	/>
+	<cache name="NormalShopAdConfigCache"
+           maxElementsInMemory="1000"
+           overflowToDisk="true"
+           eternal="false"
+		   memoryStoreEvictionPolicy="LRU"
+		   timeToIdleSeconds="0"
+		   timeToLiveSeconds="0"
+	/>
+	<cache name="NormalkeywordMatchConfigCache"
+           maxElementsInMemory="1000"
+           overflowToDisk="true"
+           eternal="false"
+		   memoryStoreEvictionPolicy="LRU"
+		   timeToIdleSeconds="0"
+		   timeToLiveSeconds="0"
+	/>
+	<cache name="NormalUrlMatchConfigCache"
+           maxElementsInMemory="10000"
+           overflowToDisk="true"
+           eternal="false"
+		   memoryStoreEvictionPolicy="LRU"
+		   timeToIdleSeconds="0"
+		   timeToLiveSeconds="0"
+	/>
+	<cache name="IkeywordDataCache"
+           maxElementsInMemory="10000"
+           overflowToDisk="true"
+           eternal="false"
+		   memoryStoreEvictionPolicy="LRU"
+		   timeToIdleSeconds="604800"
+		   timeToLiveSeconds="604800">
+		<cacheEventListenerFactory class="net.sf.ehcache.distribution.RMICacheReplicatorFactory"
+			properties="replicateAsynchronously=true,replicatePuts=true,replicateUpdates=true,replicateUpdatesViaCopy=true,
+				replicateRemovals=true"/>
+		<bootstrapCacheLoaderFactory class="net.sf.ehcache.distribution.RMIBootstrapCacheLoaderFactory"
+			properties="bootstrapAsynchronously=true,maximumChunkSizeBytes=5000000"/>
+	</cache>
+	<cache name="NormalKeywordDataCache"
+           maxElementsInMemory="10000"
+           overflowToDisk="true"
+           eternal="false"
+		   memoryStoreEvictionPolicy="LRU"
+		   timeToIdleSeconds="604800"
+		   timeToLiveSeconds="604800">
+		<cacheEventListenerFactory class="net.sf.ehcache.distribution.RMICacheReplicatorFactory"
+			properties="replicateAsynchronously=true,replicatePuts=true,replicateUpdates=true,replicateUpdatesViaCopy=true,
+				replicateRemovals=true"/>
+		<bootstrapCacheLoaderFactory class="net.sf.ehcache.distribution.RMIBootstrapCacheLoaderFactory"
+			properties="bootstrapAsynchronously=true,maximumChunkSizeBytes=5000000"/>
+	</cache>
+	<cache name="NoMatchKeywordCache"
+           maxElementsInMemory="1000"
+           overflowToDisk="true"
+           eternal="false"
+		   memoryStoreEvictionPolicy="LRU"
+		   timeToIdleSeconds="604800"
+		   timeToLiveSeconds="604800">
+		<cacheEventListenerFactory class="net.sf.ehcache.distribution.RMICacheReplicatorFactory"
+			properties="replicateAsynchronously=true,replicatePuts=true,replicateUpdates=true,replicateUpdatesViaCopy=true,
+				replicateRemovals=true"/>
+		<bootstrapCacheLoaderFactory class="net.sf.ehcache.distribution.RMIBootstrapCacheLoaderFactory"
+			properties="bootstrapAsynchronously=true,maximumChunkSizeBytes=5000000"/>
+	</cache>
+	<cache name="ShopLogCache"
+           maxElementsInMemory="10000"
+           overflowToDisk="true"
+           eternal="false"
+		   diskPersistent="true"
+		   memoryStoreEvictionPolicy="LRU"
+		   timeToIdleSeconds="1209600"
+		   timeToLiveSeconds="1209600">
+		<cacheEventListenerFactory class="net.sf.ehcache.distribution.RMICacheReplicatorFactory"
+			properties="replicateAsynchronously=true,replicatePuts=true,replicateUpdates=true,replicateUpdatesViaCopy=true,
+				replicateRemovals=true"/>
+		<bootstrapCacheLoaderFactory class="net.sf.ehcache.distribution.RMIBootstrapCacheLoaderFactory"
+			properties="bootstrapAsynchronously=true,maximumChunkSizeBytes=5000000"/>
+	 </cache>
+	 <cache name="ShopCategoryDataCache"
+           maxElementsInMemory="1000"
+           overflowToDisk="true"
+           eternal="false"
+		   diskPersistent="true"
+		   memoryStoreEvictionPolicy="LRU"
+		   timeToIdleSeconds="21600"
+		   timeToLiveSeconds="21600"><!-- 6 hours -->
+		<cacheEventListenerFactory class="net.sf.ehcache.distribution.RMICacheReplicatorFactory"
+			properties="replicateAsynchronously=true,replicatePuts=true,replicateUpdates=true,replicateUpdatesViaCopy=true,
+				replicateRemovals=true"/>
+		<bootstrapCacheLoaderFactory class="net.sf.ehcache.distribution.RMIBootstrapCacheLoaderFactory"
+			properties="bootstrapAsynchronously=true,maximumChunkSizeBytes=5000000"/>
+	 </cache>
+	 <cache name="ShopPCodeDataCache"
+           maxElementsInMemory="10000"
+           overflowToDisk="true"
+           eternal="false"
+		   diskPersistent="true"
+		   memoryStoreEvictionPolicy="LRU"
+		   timeToIdleSeconds="86400"
+		   timeToLiveSeconds="86400">
+		<cacheEventListenerFactory class="net.sf.ehcache.distribution.RMICacheReplicatorFactory"
+			properties="replicateAsynchronously=true,replicatePuts=true,replicateUpdates=true,replicateUpdatesViaCopy=true,
+				replicateRemovals=true"/>
+		<bootstrapCacheLoaderFactory class="net.sf.ehcache.distribution.RMIBootstrapCacheLoaderFactory"
+			properties="bootstrapAsynchronously=true,maximumChunkSizeBytes=5000000"/>
+	 </cache>
+	 <cache name="AdLinkCache"
+           maxElementsInMemory="10000"
+           overflowToDisk="true"
+           eternal="false"
+		   diskPersistent="true"
+		   memoryStoreEvictionPolicy="LRU"
+		   timeToIdleSeconds="604800"
+		   timeToLiveSeconds="604800"><!-- 7 days -->
+		<cacheEventListenerFactory class="net.sf.ehcache.distribution.RMICacheReplicatorFactory"
+			properties="replicateAsynchronously=true,replicatePuts=true,replicateUpdates=true,replicateUpdatesViaCopy=true,
+				replicateRemovals=true"/>
+		<bootstrapCacheLoaderFactory class="net.sf.ehcache.distribution.RMIBootstrapCacheLoaderFactory"
+			properties="bootstrapAsynchronously=true,maximumChunkSizeBytes=5000000"/>
+	 </cache>
+	 <cache name="RfKeywordLogCache"
+           maxElementsInMemory="10000"
+           overflowToDisk="true"
+           eternal="false"
+		   diskPersistent="true"
+		   memoryStoreEvictionPolicy="LRU"
+		   timeToIdleSeconds="604800"
+		   timeToLiveSeconds="604800">
+		<cacheEventListenerFactory class="net.sf.ehcache.distribution.RMICacheReplicatorFactory"
+			properties="replicateAsynchronously=true,replicatePuts=true,replicateUpdates=true,replicateUpdatesViaCopy=true,
+				replicateRemovals=true"/>
+		<bootstrapCacheLoaderFactory class="net.sf.ehcache.distribution.RMIBootstrapCacheLoaderFactory"
+			properties="bootstrapAsynchronously=true,maximumChunkSizeBytes=5000000"/>
+	 </cache>
+	<cacheManagerPeerProviderFactory
+        class="net.sf.ehcache.distribution.RMICacheManagerPeerProviderFactory"
+        properties="peerDiscovery=automatic, multicastGroupAddress=230.0.0.1,
+            multicastGroupPort=3209, timeToLive=32" />
+	<cacheManagerPeerListenerFactory
+        class="net.sf.ehcache.distribution.RMICacheManagerPeerListenerFactory"
+        properties="port=3208, socketTimeoutMillis=2000" />
+
+</ehcache>

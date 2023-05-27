@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans   
+       http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+	<bean name="AdInfoCache"
+		class="com.adgather.beans.AdInfoCache" init-method="init" scope="singleton">
+	</bean>
+	<bean name="DataMapper"
+		class="com.adgather.beans.DataMapper" scope="singleton">
+	</bean>
+	<bean name="DumpObject"
+		class="com.adgather.reportmodel.DumpObject">
+	</bean>
+	<bean name="RFData" scope="prototype"
+		class="com.adgather.reportmodel.RFData">
+	</bean>
+	<bean name="ShopData" scope="prototype"
+		class="com.adgather.reportmodel.ShopData">
+	</bean>
+	<bean name="MediaLogData" scope="prototype"
+		class="com.adgather.reportmodel.MediaLogData">
+	</bean>
+	<bean name="DayMediaLogData" scope="prototype"
+		class="com.adgather.reportmodel.DayMediaLogData">
+	</bean>
+	<bean name="DrcData" scope="prototype"
+		class="com.adgather.reportmodel.DrcData">
+	</bean>
+	<bean name="AdChargeData" scope="prototype"
+		class="com.adgather.reportmodel.AdChargeData">
+	</bean>
+	<bean name="DumpDataToDB" scope="singleton"
+		class="com.adgather.beans.DumpDataToDB" init-method="init">
+	</bean>
+	<bean name="ManagementCookie" scope="singleton"
+		class="com.adgather.beans.ManagementCookie" init-method="init">
+	</bean>
+	<bean name="WorkScheduler"
+          class="com.adgather.schedulejob.WorkScheduler"
+          init-method="setup">
+		<property name="pathToJobs">
+            <value>jobs.xml</value>
+        </property>        
+        
+		<property name="quartzProperties">
+            <map>
+                <entry key="org.quartz.scheduler.instanceName">
+                    <value>DefaultQuartzScheduler</value>
+                </entry>
+                <entry key="org.quartz.scheduler.rmi.export">
+                    <value>false</value>
+                </entry>
+                <entry key="org.quartz.scheduler.rmi.proxy">
+                    <value>false</value>
+                </entry>
+                <entry key="org.quartz.scheduler.wrapJobExecutionInUserTransaction">
+                    <value>false</value>
+                </entry>
+                <entry key="org.quartz.threadPool.class">
+                    <value>org.quartz.simpl.SimpleThreadPool</value>
+                </entry>
+                <entry key="org.quartz.threadPool.threadCount">
+                    <value>1</value>
+                </entry>
+                <entry key="org.quartz.threadPool.threadPriority">
+                    <value>5</value>
+                </entry>
+                <entry key="org.quartz.threadPool.threadsInheritContextClassLoaderOfInitializingThread">
+                    <value>true</value>
+                </entry>
+            </map>
+        </property>
+    </bean>
+</beans>
